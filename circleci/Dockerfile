@@ -1,6 +1,6 @@
 FROM circleci/php:7.2-fpm-node-browsers
 
-RUN sudo mkdir -p /usr/share/man/man{1,7}
+RUN ["/bin/bash", "sudo", "mkdir", "-p", "/usr/share/man/man{1,7}"]
 RUN sudo apt-get update || sudo apt-get update
 RUN sudo apt-get install postgresql-client-9.6 libpq-dev acl
 RUN sudo docker-php-ext-install pdo pdo_mysql pdo_pgsql pcntl
